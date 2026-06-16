@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* ── Font ── change this one line to update font everywhere */
+  --font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+
+  /* ── Background & Surface Colors ── */
+  --bg: #f3f6f9;            /* Main page background (light grey) */
+  --card: #ffffff;          /* Cards, panels, modals background */
+  --card-2: #f8fafc;        /* Secondary card background (slightly grey) */
+
+  /* ── Text Colors ── */
+  --text: #1e293b;          /* Main text color (dark navy) */
+  --muted: #64748b;         /* Secondary/grey text (labels, subtitles) */
+
+  /* ── Border & Divider ── */
+  --border: #e2e8f0;        /* All borders, dividers, input borders */
+
+  /* ── Brand Colors (LOLC Unguka Finance) ── */
+  --primary: #1d61a8;       /* LOLC Blue — buttons, sidebar active, links */
+  --primary-hover: #154c86; /* LOLC Blue darker — button hover state */
+  --accent: #ed1f24;        /* LOLC Red — danger, accent, logo red square */
+  --accent-hover: #c9171b;  /* LOLC Red darker — hover state */
+
+  /* ── Status Colors ── */
+  --success-bg: #dcfce7;    /* Green background — success messages */
+  --success-text: #166534;  /* Green text — success messages */
+
+  --danger-bg: #fee2e2;     /* Red background — error messages, delete buttons */
+  --danger-text: #991b1b;   /* Red text — error messages */
+
+  --warning-bg: #ffedd5;    /* Orange background — warning messages */
+  --warning-text: #9a3412;  /* Orange text — warning messages */
+
+  --info-bg: #e0f2fe;       /* Blue background — info messages */
+  --info-text: #075985;     /* Blue text — info messages */
+
+  /* ── Shadows ── */
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);       /* Card shadow */
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.1);  /* Card shadow on hover */
+  --radius: 16px;           /* Default border radius for cards */
+}
+
+[data-theme="dark"] {
+  /* True Dark Mode */
+  --bg: #0f172a;            /* Deep slate */
+  --card: #1e293b;          /* Elevated slate for cards */
+  --card-2: #334155;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+  --border: #334155;
+
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --accent: #8b5cf6;
+
+  --success-bg: rgba(22, 101, 52, 0.25);
+  --success-text: #86efac;
+
+  --danger-bg: rgba(153, 27, 27, 0.25);
+  --danger-text: #fca5a5;
+
+  --warning-bg: rgba(154, 52, 18, 0.25);
+  --warning-text: #fdba74;
+
+  --info-bg: rgba(7, 89, 133, 0.25);
+  --info-text: #7dd3fc;
+
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary);
+}
+
+table {
+  color: var(--text);
+}
+
+th,
+td {
+  color: inherit;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-family: var(--font-family);
+  outline: none;
+}
+
+.input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-family: var(--font-family);
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-family: var(--font-family);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.container {
+  width: min(1200px, calc(100% - 24px));
+  margin: 0 auto;
+}
+
+.table-hover tbody tr:hover {
+  background: var(--card-2);
+}
+
+/* Useful status helpers */
+.status-read {
+  color: var(--success-text);
+  font-weight: 800;
+}
+
+.status-unread {
+  color: var(--danger-text);
+  font-weight: 800;
+}
+
+.alert-error {
+  background: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.alert-success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.alert-info {
+  background: var(--info-bg);
+  color: var(--info-text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
