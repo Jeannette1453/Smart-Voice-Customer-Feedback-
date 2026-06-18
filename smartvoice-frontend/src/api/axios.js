@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "../auth/auth";
 
 const api = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: "https://smart-voice-customer-feedback-production.up.railway.app",
 });
 
 api.interceptors.request.use((config) => {
